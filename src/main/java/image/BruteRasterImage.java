@@ -10,6 +10,7 @@ public class BruteRasterImage implements Image {
     int width ;
     int height;
     public Color[][] colors;
+    public enum RasterImageType {BRUTE};
 
 
     public BruteRasterImage(int width, int height, Color color) {
@@ -77,5 +78,5 @@ public class BruteRasterImage implements Image {
             }
         }
     }
-    
+
 }
