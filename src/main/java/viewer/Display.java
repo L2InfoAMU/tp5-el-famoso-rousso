@@ -25,6 +25,7 @@ public class Display implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         // TODO : rajouter la création d'une fabrique d'image pour initialiser imageFactory
+        imageFactory = new RasterUniformImageFactory(200, 200, Color.RED,BruteRasterImage.RasterImageType.BRUTE);
 
         this.image = imageFactory.makeImage();
 
@@ -52,8 +53,5 @@ public class Display implements Initializable {
         pixelWriter.setColor(x, y, image.getPixelColor(x, y));
     }
 
-    private  void initialize(){
-        imageFactory = new RasterUniformImageFactory(200, 200, Color.RED,BruteRasterImage.RasterImageType.BRUTE);
 
-    }
 }
