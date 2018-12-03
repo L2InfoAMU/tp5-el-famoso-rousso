@@ -6,9 +6,9 @@ public class RasterUniformImageFactory implements ImageFactory {
     private int width;
     private int height;
     private Color color;
-    private BruteRasterImage.RasterImageType rasterImageType;
+    private RasterImageType rasterImageType;
 
-    public RasterUniformImageFactory(int width, int height, Color color,BruteRasterImage.RasterImageType rasterImageType) {
+    public RasterUniformImageFactory(int width, int height, Color color,RasterImageType rasterImageType) {
         this.width = width;
         this.height = height;
         this.color = color;
@@ -19,7 +19,7 @@ public class RasterUniformImageFactory implements ImageFactory {
     public Image makeImage() {
         switch (rasterImageType){
             case BRUTE:
-                return new BruteRasterImage(width, height, color);
+                return new BruteRasterImage(color, width, height);
             default:
                 throw new NotSupportedException(rasterImageType + " is not supported");
         }
