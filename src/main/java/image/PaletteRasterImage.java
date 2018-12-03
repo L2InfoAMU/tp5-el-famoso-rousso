@@ -4,9 +4,10 @@ package image;
 import javafx.scene.paint.Color;
 import util.Matrices;
 
+import java.util.LinkedList;
 import java.util.List;
 
-public class PaletteRasterImage  implements Image {
+public class PaletteRasterImage   implements Image {
 
 
     int width ;
@@ -21,7 +22,12 @@ public class PaletteRasterImage  implements Image {
         this.palette = palette;
     }
 
+    public void fixPixelColor(Color color){
+        if (!palette.contains(color)){
+            palette.add(color);
 
+        }
+    }
 
     @Override
     public Color getPixelColor(int x, int y) {
@@ -48,6 +54,7 @@ public class PaletteRasterImage  implements Image {
     public void createRepresentation(){
 
         indexesOfColors = new int[getWidth()][getHeight()];
+        palette = new LinkedList<Color>;
     }
     public void setPixelColor(Color color, int x, int y){
         this.indexesOfColors[x][y]=palette.indexOf(color);

@@ -20,12 +20,4 @@ public abstract class RasterImage  {
         return height;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-
-    }
 }
