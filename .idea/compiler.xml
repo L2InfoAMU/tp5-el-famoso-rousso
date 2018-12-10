@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tp5" />
         <module name="tp5-el-famoso-rousso" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="tp5" target="10" />
       <module name="tp5-el-famoso-rousso" target="10" />
     </bytecodeTargetLevel>
   </component>

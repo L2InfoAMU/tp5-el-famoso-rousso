@@ -54,7 +54,7 @@ public class PaletteRasterImage   implements Image {
     public void createRepresentation(){
 
         indexesOfColors = new int[getWidth()][getHeight()];
-        palette = new LinkedList<Color>;
+         palette = new LinkedList<>();
     }
     public void setPixelColor(Color color, int x, int y){
         this.indexesOfColors[x][y]=palette.indexOf(color);
