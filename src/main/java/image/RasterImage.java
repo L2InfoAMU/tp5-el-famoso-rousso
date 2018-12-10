@@ -2,7 +2,7 @@ package image;
 
 import javafx.scene.paint.Color;
 
-public abstract class RasterImage  {
+public abstract class RasterImage   {
 
     int width;
     int height;
@@ -19,5 +19,18 @@ public abstract class RasterImage  {
     public int getHeight() {
         return height;
     }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public abstract void createRepresentation();
+    public abstract void setPixelColor(Color color, int x, int y);
+    public abstract void setPixelsColor(Color color);
+    public abstract Color getPixelColor(int x,int y);
 
 }

@@ -7,7 +7,7 @@ import util.Matrices;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PaletteRasterImage   implements Image {
+public class PaletteRasterImage   extends RasterImage {
 
 
     int width ;
@@ -17,7 +17,7 @@ public class PaletteRasterImage   implements Image {
     List<Color> palette;
 
     public PaletteRasterImage(int[][] indexesOfColors, List<Color> palette) {
-
+        super(indexesOfColors.length,indexesOfColors[0].length);
         indexesOfColors = new  int[width][height];
         this.palette = palette;
     }
@@ -29,28 +29,12 @@ public class PaletteRasterImage   implements Image {
         }
     }
 
-    @Override
+
     public Color getPixelColor(int x, int y) {
         return palette.get(indexesOfColors[x][y]);
     }
 
-    @Override
-    public int getWidth() {
-        return indexesOfColors.length;
-    }
 
-    @Override
-    public int getHeight() {
-        return indexesOfColors[0].length;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
     public void createRepresentation(){
 
         indexesOfColors = new int[getWidth()][getHeight()];
@@ -59,10 +43,10 @@ public class PaletteRasterImage   implements Image {
     public void setPixelColor(Color color, int x, int y){
         this.indexesOfColors[x][y]=palette.indexOf(color);
     }
-    private void setPixelsColor(int[][] indexesOfColors){
+    public void setPixelsColor(int[][] indexesOfColors){
         this.indexesOfColors = indexesOfColors.clone();
     }
-    private void setPixelsColor(Color color) {
+    public void setPixelsColor(Color color) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 this.indexesOfColors[i][j] = palette.indexOf(color);
