@@ -2,7 +2,7 @@ package image;
 
 import javafx.scene.paint.Color;
 
-public abstract class RasterImage   {
+public abstract class RasterImage  implements  Image {
 
     int width;
     int height;
